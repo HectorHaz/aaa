@@ -1,0 +1,11 @@
+{
+  "info": {
+    "name": "ERP PyME RD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {"name": "Login", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{apiUrl}}/auth/login", "body": {"mode": "raw", "raw": "{\n  \"email\": \"admin@demo.do\",\n  \"password\": \"Admin1234!\"\n}"}}},
+    {"name": "Crear cliente", "request": {"method": "POST", "header": [{"key": "Authorization", "value": "Bearer {{token}}"}, {"key": "Content-Type", "value": "application/json"}], "url": "{{apiUrl}}/customers", "body": {"mode": "raw", "raw": "{\n  \"code\": \"C-101\",\n  \"name\": \"Cliente Postman\",\n  \"paymentTermsDays\": 30,\n  \"creditLimit\": 10000\n}"}}}
+  ],
+  "variable": [{"key": "apiUrl", "value": "http://localhost:4000"}, {"key": "token", "value": ""}]
+}

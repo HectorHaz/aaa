@@ -1,0 +1,15 @@
+{
+  "name": "pymes-erp-rd",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/api", "apps/web"],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "dev": "concurrently \"npm:dev -w apps/api\" \"npm:dev -w apps/web\"",
+    "test": "npm run test -w apps/api",
+    "lint": "npm run lint -w apps/api && npm run lint -w apps/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
